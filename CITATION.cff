@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Thompson"
+    given-names: "Stephen"
+    email: "s.thompson@ucl.ac.uk"
+repository-code: "https://github.com/thompson318/radio-server"
+title: "radio_server: A simple web server to play selected radio stations"
+license: "GPL-3.0"
