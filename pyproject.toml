@@ -13,12 +13,17 @@ classifiers = [
     "Operating System :: POSIX",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.08",
+    "Programming Language :: Python :: 3.09",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Typing :: Typed",
 ]
 dependencies = [
+
+    "Flask", 
+    "python-vlc"
 ]
 description = "A simple web server to play selected radio stations"
 dynamic = [
@@ -45,7 +50,7 @@ optional-dependencies = {dev = [
     "pytest-cov",
 ]}
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 license.file = "LICENSE.md"
 urls.homepage = "https://github.com/thompson318/radio-server"
 
