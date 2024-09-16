@@ -46,7 +46,7 @@ def screenoff():
     subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'off'])
 
 @app.route('/screenon', methods=['GET'])
-def screenoff():
+def screenon():
     subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'on'])
 
 if __name__ == '__main__':
