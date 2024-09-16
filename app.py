@@ -43,11 +43,17 @@ def stop():
 
 @app.route('/screenoff', methods=['GET'])
 def screenoff():
-    subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'off'])
+    try:
+        subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'off'])
+    except:
+        pass
 
 @app.route('/screenon', methods=['GET'])
 def screenon():
-    subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'on'])
+    try:
+        subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'on'])
+    except:
+        pass
 
 if __name__ == '__main__':
     app.run(port=5002, threaded=True)
