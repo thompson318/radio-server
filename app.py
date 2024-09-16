@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template, jsonify, send_file
+import subprocess
 import vlc
+
 
 # Declare a flask app
 app = Flask(__name__)
@@ -32,30 +34,20 @@ def play():
     myplayer.play()
     return channel
 
-
-@app.route('/radio4', methods=['GET'])
-def radio4():
-    channel = request.args.get("channel")
-    media=player.media_new("http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_radio_fourfm/bbc_radio_fourfm.isml/bbc_radio_fourfm-audio=320000.m3u8")
-    myplayer.set_media(media)
-    myplayer.play()
-    return channel
-
 @app.route('/stop', methods=['GET'])
 def stop():
 
     myplayer.stop()
     return "Stopping"
 
-@app.route('/radio6', methods=['GET'])
-def radio6():
 
-    media=player.media_new("http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_6music/bbc_6music.isml/bbc_6music-audio=320000.m3u8")
-    myplayer.set_media(media)
-    myplayer.play()
-    return "Playing radio 4"
+@app.route('/screenoff', methods['GET'])
+def screenoff():
+    subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'off'])
 
-
+@app.route('/screenon', methods['GET'])
+def screenoff():
+    subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'on'])
 
 if __name__ == '__main__':
     app.run(port=5002, threaded=True)

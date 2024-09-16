@@ -29,3 +29,11 @@ function stop(){
 	console.log("Stopping")
 	fetch("/stop",{method:"GET"})
 }
+function screenoff(){
+	console.log("screen off")
+	fetch("/screenoff",{method:"GET"})
+}
+function screenon(){
+	console.log("screen on")
+	fetch("/screenon",{method:"GET"})
+}
