@@ -41,11 +41,11 @@ def stop():
     return "Stopping"
 
 
-@app.route('/screenoff', methods['GET'])
+@app.route('/screenoff', methods=['GET'])
 def screenoff():
     subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'off'])
 
-@app.route('/screenon', methods['GET'])
+@app.route('/screenon', methods=['GET'])
 def screenoff():
     subprocess.run(['xset', '-display', ':0.0', 'dpms', 'force', 'on'])
 
