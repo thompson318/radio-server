@@ -40,6 +40,12 @@ def stop():
     myplayer.stop()
     return "Stopping"
 
+@app.route('/status', methods=['GET'])
+def status():
+    if myplayer.is_playing():
+        return 'playing'
+    else:
+        return 'idle'
 
 @app.route('/screenoff', methods=['GET'])
 def screenoff():
