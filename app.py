@@ -20,6 +20,9 @@ class audio_player():
 
     def stop(self):
         self.myplayer.stop()
+        del self.myplayer
+        del self.player
+        self.__init__()
 
 
 my_audio_player = audio_player()
