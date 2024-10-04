@@ -6,10 +6,23 @@ import vlc
 # Declare a flask app
 app = Flask(__name__)
 
-player=vlc.Instance()
-myplayer =  player.media_player_new()
+class audio_player():
+    def __init__(self):
+        self.player=vlc.Instance()
+        self.myplayer =  self.player.media_player_new()
+        self.myplayer.audio_output_device_set(None, "hdmi:CARD=vc4hdmi,DEV=0")
+
+    def play(self, channel):
+        self.myplayer.set_media
+        media=self.player.media_new(channel)
+        self.myplayer.set_media(media)
+        self.myplayer.play()
+
+    def stop(self):
+        self.myplayer.stop()
 
 
+my_audio_player = audio_player()
 
 @app.route('/favicon.ico', methods=['GET'])
 def favicon():
@@ -29,15 +42,13 @@ def index():
 @app.route('/play', methods=['GET'])
 def play():
     channel = request.args.get("channel")
-    media=player.media_new(channel)
-    myplayer.set_media(media)
-    myplayer.play()
+    my_audio_player.play(channel)
     return channel
 
 @app.route('/stop', methods=['GET'])
 def stop():
 
-    myplayer.stop()
+    my_audio_player.stop()
     return "Stopping"
 
 @app.route('/status', methods=['GET'])
