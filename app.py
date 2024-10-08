@@ -10,7 +10,6 @@ class audio_player():
     def __init__(self):
         self.player=vlc.Instance()
         self.myplayer =  self.player.media_player_new()
-        self.myplayer.audio_output_device_set(None, "hdmi:CARD=vc4hdmi,DEV=0")
 
     def play(self, channel):
         self.myplayer.set_media
@@ -20,9 +19,6 @@ class audio_player():
 
     def stop(self):
         self.myplayer.stop()
-        del self.myplayer
-        del self.player
-        self.__init__()
 
 
 my_audio_player = audio_player()
