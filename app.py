@@ -1,10 +1,12 @@
 from flask import Flask, request, render_template, jsonify, send_file
 import subprocess
 import vlc
-
+import logging
 
 # Declare a flask app
 app = Flask(__name__)
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 class audio_player():
     def __init__(self):
