@@ -1,8 +1,9 @@
 #! /bin/bash
 startit=0
-if [ -s .processlock ]
+export VLC_VERBOSE=-1
+if [ -s /dev/shm/.processlock ]
 then
-	pid=$(cat .processlock)
+	pid=$(cat /dev/shm/.processlock)
 	if ps -p $pid >/dev/null
 	then
 		echo "Process ${pid} already running"
@@ -18,5 +19,5 @@ then
 	echo "starting up"
 	source env/bin/activate
 	flask run --host=0.0.0.0 &
-	echo $! > .processlock
+	echo $! > /dev/shm/.processlock
 fi
