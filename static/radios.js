@@ -20,6 +20,8 @@ const radio6 ="http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_6music/b
 
 const radio5sportsextra ="http://as-hls-uk-live.akamaized.net/pool_904/live/uk/bbc_radio_five_live_sports_extra/bbc_radio_five_live_sports_extra.isml/bbc_radio_five_live_sports_extra-audio%3d96000.norewind.m3u8"
 
+const talksport2 = "http://www.radiofeeds.net/playlists/talksport2.m3u"
+
 function play(channel){
 	address = String("/play?channel=" + channel)
 	console.log("Playing", address)
