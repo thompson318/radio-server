@@ -22,6 +22,8 @@ const radio5sportsextra ="http://as-hls-uk-live.akamaized.net/pool_904/live/uk/b
 
 const talksport2 = "http://radio.talksport.com/stream2?ref=rf"
 
+const rrr = "http://realtime.rrr.org.au/p1h"
+
 function play(channel){
 	address = String("/play?channel=" + channel)
 	console.log("Playing", address)
